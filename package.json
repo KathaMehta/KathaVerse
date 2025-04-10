@@ -10,6 +10,8 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d out"
   },
+  "homepage": "https://kathamehta.github.io/KathaVerse/",
+  
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
     "@radix-ui/react-accordion": "^1.2.2",

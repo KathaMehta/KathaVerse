@@ -42,33 +42,34 @@ const ExperienceSection = () => {
   ]
 
   return (
-    <section id="experience" className="py-20 bg-white dark:bg-gray-950">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="experience" className="py-24 bg-card dark:bg-navy/90">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white sm:text-4xl">Work Experience</h2>
-          <div className="mt-2 h-1 w-20 bg-purple-600 mx-auto"></div>
+          <h2 className="text-3xl font-bold text-navy dark:text-white sm:text-4xl mb-2">Work Experience</h2>
+          <div className="w-32 h-1 bg-gradient-to-r from-accent via-rosegold to-accent mx-auto mb-4"></div>
+          <p className="text-accent/80 italic font-light">My professional journey</p>
         </div>
 
         <div className="relative">
           {/* Timeline line */}
-          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gray-200 dark:bg-gray-700"></div>
+          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-accent/20 dark:bg-accent/30"></div>
 
-          <div className="space-y-12">
+          <div className="space-y-16">
             {experiences.map((exp, index) => (
               <div key={index} className="relative">
                 {/* Timeline dot */}
-                <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-purple-600 border-4 border-white dark:border-gray-900"></div>
+                <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-5 h-5 rounded-full bg-accent border-4 border-card dark:border-navy/90 shadow-rosegold"></div>
 
                 <div className={`md:flex items-start ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}>
                   {/* Date and location for desktop */}
                   <div
-                    className={`hidden md:block w-1/2 ${index % 2 === 0 ? "md:pr-12 text-right" : "md:pl-12 text-left"}`}
+                    className={`hidden md:block w-1/2 ${index % 2 === 0 ? "md:pr-16 text-right" : "md:pl-16 text-left"}`}
                   >
-                    <div className="flex items-center mb-2 text-gray-600 dark:text-gray-400 text-sm">
+                    <div className="flex items-center mb-2 text-text dark:text-gray-400 text-sm">
                       <Calendar className="h-4 w-4 mr-1" />
                       <span>{exp.period}</span>
                     </div>
-                    <div className="flex items-center text-gray-600 dark:text-gray-400 text-sm">
+                    <div className="flex items-center text-text dark:text-gray-400 text-sm">
                       <MapPin className="h-4 w-4 mr-1" />
                       <span>{exp.location}</span>
                     </div>
@@ -76,11 +77,13 @@ const ExperienceSection = () => {
 
                   {/* Card */}
                   <Card
-                    className={`w-full md:w-1/2 ${index % 2 === 0 ? "md:pl-12" : "md:pr-12"} bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-shadow`}
+                    className={`w-full md:w-1/2 ${
+                      index % 2 === 0 ? "md:pl-16" : "md:pr-16"
+                    } glass-card rounded-2xl shadow-xl hover:shadow-rosegold transition-all duration-300 hover:-translate-y-1 border-0`}
                   >
-                    <CardContent className="p-6">
+                    <CardContent className="p-8">
                       {/* Date and location for mobile */}
-                      <div className="md:hidden flex justify-between mb-4 text-gray-600 dark:text-gray-400 text-sm">
+                      <div className="md:hidden flex justify-between mb-4 text-text dark:text-gray-400 text-sm">
                         <div className="flex items-center">
                           <Calendar className="h-4 w-4 mr-1" />
                           <span>{exp.period}</span>
@@ -91,14 +94,14 @@ const ExperienceSection = () => {
                         </div>
                       </div>
 
-                      <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1">{exp.title}</h3>
-                      <h4 className="text-lg font-medium text-purple-600 dark:text-purple-400 mb-4">{exp.company}</h4>
+                      <h3 className="text-2xl font-bold text-navy dark:text-white mb-1">{exp.title}</h3>
+                      <h4 className="text-lg font-medium text-accent dark:text-accent mb-6 italic">{exp.company}</h4>
 
-                      <ul className="space-y-2 mb-4">
+                      <ul className="space-y-3 mb-6">
                         {exp.description.map((item, i) => (
                           <li key={i} className="flex">
-                            <ChevronRight className="h-5 w-5 text-purple-600 dark:text-purple-400 flex-shrink-0 mt-0.5" />
-                            <span className="text-gray-700 dark:text-gray-300 ml-2">{item}</span>
+                            <ChevronRight className="h-5 w-5 text-accent dark:text-accent flex-shrink-0 mt-0.5" />
+                            <span className="text-text dark:text-gray-300 ml-2">{item}</span>
                           </li>
                         ))}
                       </ul>
@@ -107,7 +110,7 @@ const ExperienceSection = () => {
                         {exp.skills.map((skill, i) => (
                           <span
                             key={i}
-                            className="px-2 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 rounded-full text-xs"
+                            className="px-3 py-1 bg-highlight dark:bg-accent/20 text-navy dark:text-accent/90 rounded-full text-xs"
                           >
                             {skill}
                           </span>
@@ -126,4 +129,3 @@ const ExperienceSection = () => {
 }
 
 export default ExperienceSection
-

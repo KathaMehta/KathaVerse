@@ -1,10 +1,11 @@
 import type { Metadata } from 'next'
 import './globals.css'
+// import '@/styles/globals.css' // relative path, not /styles
+
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
-  generator: 'v0.dev',
+  title: 'KathaVerse',
+  description: 'Story of a Coder',
 }
 
 export default function RootLayout({

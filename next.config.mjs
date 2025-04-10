@@ -23,12 +23,18 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  assetPrefix:'/KathaVerse/' ,
+  basePath: '/KathaVerse',
   experimental: {
     webpackBuildWorker: true,
     parallelServerBuildTraces: true,
     parallelServerCompiles: true,
   },
+  output: 'export'
 }
+
+// nextConfig.basePath = "/KathaVerse"
+// nextConfig.assetPrefix = "/KathaVerse"
 
 if (userConfig) {
   // ESM imports will have a "default" property
